@@ -1,0 +1,6 @@
+#include<iostream>
+using stdnames;
+int main
+{
+  cout<<"Omar";
+}
