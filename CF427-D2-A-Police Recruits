@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n ,a=0,b=0,c;cin>>n;
+    while(n--)
+    {
+        cin>>c;
+        if(c>0)a+=c;
+        else
+        {
+            b++;
+            if(a){b--;a--;}
+        }
+    }
+    cout<<b;
+    return 0;
+}
