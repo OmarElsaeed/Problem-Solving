@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+char c[26] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+short findchar(char ch)
+{
+    for(short i=0;i<26;i++)
+    {
+        if(c[i]==ch)return i;
+    }
+}
+
+int main()
+{
+
+    string s;cin>>s;short sD=0,ans=0;
+    for(int i=0;i<s.length();i++)
+    {
+           short v =findchar(s[i]);
+           ans+=min(abs(v-sD),26-abs(v-sD));
+            sD = v;
+    }
+    cout<<ans<<endl;
+return 0;
+}
