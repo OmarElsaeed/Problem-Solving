@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+
+
+using namespace std;
+
+int main()
+{
+    set<char> s;
+    string letters;
+    getline(cin,letters);
+
+    for(int i =1;i<letters.length()-1;i++)
+    {
+        if(letters[i]==','||letters[i]==' ')continue;
+         s.insert(letters[i]);
+    }
+
+
+    cout<<s.size()<<endl;
+    return 0;
+}
