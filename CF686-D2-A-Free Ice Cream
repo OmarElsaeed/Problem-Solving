@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+
+
+using namespace std;
+
+int main()
+{
+    long long  n,x,d,ans=0;
+    char c;
+    cin>>n>>x;
+    while(n--)
+    {
+        cin>>c>>d;
+        if(c=='+')x+=d;
+        else
+        {
+            if(x>=d)
+                x-=d;
+            else
+            ans++;
+        }
+    }
+    cout<<x<<" "<<ans<<endl;
+    return 0;
+}
