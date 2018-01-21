@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+
+
+using namespace std;
+
+int main()
+{
+    string s;cin >>s;
+    sort(s.begin(),s.end());
+    cout<<s[s.length()/2];
+    for(int i=s.length()/2+1;i<s.length();i++)
+    {
+            cout<<"+"<<s[i];
+    }
+    cout <<endl;
+    return 0;
+}
