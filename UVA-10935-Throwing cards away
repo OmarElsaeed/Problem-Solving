@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,x,a;
+    deque<int> dq;
+    while(cin>>n&&n!=0)
+    {
+        if(n==1){cout<<"Discarded cards: ";cout<<"\nRemaining card: "<<n<<endl ;}
+        else
+            {
+                for(int i=1;i<=n;i++)
+            dq.push_back(i);
+        cout<<"Discarded cards: " ;
+        while(dq.size()>2)
+        {
+
+            cout<<dq.front()<<", ";
+            dq.pop_front();
+            a = dq.front();
+            dq.push_back(a);
+            dq.pop_front();
+        }
+        cout<<dq.front();
+        cout<<"\nRemaining card: "<<dq.back()<<endl ;
+            }
+            dq.clear();
+
+    }
+    return 0;
+}
