@@ -1,0 +1,32 @@
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    int main()
+    {
+        int n;
+        while(cin>>n,n)
+        {
+            int arr[n][n] ,rows[n]={0} ,col[n]={0} ,r = 0 ,c = 0,Ri,Ci;
+            bool a = true,b =true;
+            for(int i=0;i<n;i++)
+            {
+                for(int j=0;j<n;j++)
+                {
+                        cin>>arr[i][j];
+                rows[i]+=arr[i][j];
+                col[j]+=arr[i][j];
+                }
+            }
+            for(int i=0;i<n;i++)
+            {
+                if(rows[i]%2!=0){a=false;r++;Ri=i;}
+                 if(col[i]%2!=0){b=false;c++;Ci=i;}
+
+            }
+            if(a,b)cout<<"OK\n";
+            else if(r==1&&c==1)cout<<"Change bit ("<<Ri+1<<","<<Ci+1<<")\n";
+            else cout<<"Corrupt\n";
+        }
+        return 0;
+    }
