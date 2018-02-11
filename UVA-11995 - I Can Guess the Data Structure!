@@ -1,0 +1,54 @@
+                            Run Time Errot;
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n,x,check;
+    while(cin>>n)
+    {
+        stack<int> s;
+        queue<int> q;
+        priority_queue<int> pq;
+        bool S_poss = true,Q_poss=true,PQ_poss = true;
+        for(int i=0;i<n;i++)
+        {
+            cin>>check>>x;
+            if(!S_poss&&!Q_poss&&!PQ_poss)continue;
+            else if(check==1)
+                {
+                    if (S_poss) s.push(x);
+                    if (Q_poss) q.push(x);
+                    if (PQ_poss) pq.push(x);
+                }
+
+            else
+            {
+                if(S_poss) {if(x==s.top())   s.pop();         else S_poss = false;     }
+                if(Q_poss) {if(x==q.front()) q.pop();         else Q_poss = false;     }
+                if(PQ_poss) {if(x==pq.top()) pq.pop();        else PQ_poss = false;    }
+
+            }
+
+        }
+
+        if (S_poss == true && Q_poss == false && PQ_poss == false)
+			cout << "stack" << endl;
+		else if (S_poss == false && Q_poss == true && PQ_poss == false)
+			cout << "queue" << endl;
+		else if (S_poss == false && Q_poss == false && PQ_poss == true)
+			cout << "priority queue" << endl;
+		else if (S_poss == false && Q_poss == false && PQ_poss == false)
+			cout << "impossible" << endl;
+		else
+			cout << "not sure" << endl;
+
+
+    }
+
+    return 0;
+}
+
+
