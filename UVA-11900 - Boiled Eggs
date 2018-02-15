@@ -4,7 +4,7 @@ using namespace std;
 
 int L_B_S(int arr[],int  e, int Q)
 {
-    int s = 1,mid;
+    int s = 0,mid;    //s=0 not 1;
     while(s<e)
     {
         mid = s+(e-s+1)/2;
