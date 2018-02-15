@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int L_B_S(int arr[],int  e, int Q)
+{
+    int s = 1,mid;
+    while(s<e)
+    {
+        mid = s+(e-s+1)/2;
+        if(arr[mid]>Q)e = mid -1;
+        else s = mid;
+    }
+    return s;
+}
+int main()
+{
+    int T,x,i=0;
+    cin>>T;
+    while(T--)
+    {
+        i++;
+        int n,P,Q;
+        cin>>n>>P>>Q;
+        int arr[n] = {0};
+        for(int i=1;i<=n;i++)
+        {
+            cin>>x;
+            arr[i] = arr[i-1]+x;
+        }
+        int ans = min(L_B_S(arr,n,Q),P);
+        cout<<"Case "<<i<<": "<<ans<<endl;
+    }
+    return 0;
+}
