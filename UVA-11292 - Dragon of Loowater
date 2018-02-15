@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n,m;
+    while(cin>>n>>m,n,m)
+    {
+        int n_arr[n] = {0};
+        int m_arr[m] = {0};
+        for(int i=0;i<n;i++) cin>>n_arr[i];
+        for(int i=0;i<m;i++) cin>>m_arr[i];
+
+        sort(n_arr,n_arr+n);
+        sort(m_arr,m_arr+m);
+        int j=0 ,ans=0;
+
+        for(int i=0;i<m&&j<n;i++)
+            if(m_arr[i]>=n_arr[j]) {ans+=m_arr[i];j++;}
+
+        if(j==n)cout<<ans<<endl;
+        else cout<<"Loowater is doomed!\n";
+    }
+    return 0;
+}
