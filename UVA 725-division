@@ -1,0 +1,45 @@
+//Presentation error
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int N,ans ,Num1 ,Num2 ,b;
+    //scanf("%d",&N);
+    while(cin>>N,N)
+    {
+        bool exist = false;
+        for(int start = 1234;start<=98765/N;start++)
+            {
+                ans = (start<10000);
+                Num1 = start;
+                Num2 = start * N;
+                b = Num2;
+                while(Num1)
+                    {
+                        ans |= 1<<(Num1%10);
+                        Num1 /= 10 ;
+                    }
+                while(Num2)
+                    {
+                        ans |= 1<<(Num2%10);
+                        Num2 /= 10 ;
+                    }
+                if(ans == 1023)
+                {
+                    if(start<10000)
+                        cout<<b<<" / "<<0<<start<<" = "<<N<<endl;
+                        printf("%05d / %05d = %d\n", num, denum, n);
+                    else
+                        printf("%05d / %05d = %d\n", num, denum, n);
+                    exist = true;
+                }
+           }
+           if(!exist)
+           {printf("There are no solutions for %d.\n", N);}
+
+    }
+
+    return 0;
+}
