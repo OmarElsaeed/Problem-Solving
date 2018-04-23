@@ -1,0 +1,43 @@
+#include <iostream>
+
+using namespace std;
+
+int divisors(int n)
+{
+    int sum = 0;
+    for(int i=1;i*i<=n;i++)
+    {
+        if(n%i==0)
+
+        {
+            sum++;
+            if(i*i!=n)
+        {
+            sum++;
+        }
+        }
+    }
+    return sum;
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int maxi = 0,Num;
+        int L,U;
+        cin>>L>>U;
+        for(int i=L;i<=U;i++)
+        {
+            if(divisors(i)>maxi)
+            {
+                maxi = divisors(i);
+                Num = i;
+            }
+        }
+            cout<<"Between "<<L<<" and "<<U<<", "<<Num<<" has a maximum of "<<maxi<<" divisors.\n";
+    }
+    return 0;
+}
