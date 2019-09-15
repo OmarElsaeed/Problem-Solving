@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int main()
+{
+ 
+   unsigned long long  k, n, mid ,res;
+   cin>>n>>k;
+   mid = ceil(double(n) / double(2));
+   res = k <= mid ? 2 * k -1 : 2 * (k-mid);
+      cout<<res;
+return 0;
+}
