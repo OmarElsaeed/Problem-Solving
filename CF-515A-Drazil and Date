@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int main()
+{
+   int a, b, s;
+   cin>>a>>b>>s;
+   int myS = abs(a) + abs(b);
+    if(myS > s){
+        cout<<"No";
+    }
+    else{
+            if (myS == s || (myS - s) % 2 == 0){
+        cout<<"Yes";
+    }
+    else {
+        cout<<"No";
+    }
+    }
+return 0;
+}
