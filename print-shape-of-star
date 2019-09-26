@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+ 
+ 
+int main()
+{
+    int n ; //odd number
+    cin>>n;
+    for(int i=1 ; i<=n ; i+=2)//loop on lines
+        {
+        for(int k = 0 ; k< (n - i)/2 ; k++)cout<<" "; //mathematically deduced relation
+ 
+        for(int j=0 ; j<i ; j++){ // number of * = line number i
+            cout<<"*";
+        }
+        for(int k = 0 ; k< (n - i)/2 ; k++)cout<<" ";  // to print spaces after *
+ 
+        cout<<endl; // start a new line / row
+    }
+ 
+    for(int i=n-2 ; i>0 ; i-=2) //start fom n-2 so we don't repeat n *  twice (try it yourself)
+    {
+        for(int k = 0 ; k< (n - i)/2 ; k++)cout<<" ";
+ 
+        for(int j=i ; j>0 ; j--){ // just reverse the relation
+            cout<<"*";
+        }
+        for(int k = 0 ; k< (n - i)/2 ; k++)cout<<" ";
+ 
+        cout<<endl;
+    }
+    //Happy nested loop :D :D
+ 
+}
