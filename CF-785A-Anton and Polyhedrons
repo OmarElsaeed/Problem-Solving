@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+map<string,int> m ;
+long long n , sum = 0 ;
+//m.insert(make_pair("Tetrahedron",4));
+// m.insert(pair<string,int>("Cube",6));
+m["Tetrahedron"]=4;
+m["Cube"]=6;
+m["Octahedron"]=8;
+m["Dodecahedron"]=12;
+m["Icosahedron"]=20;
+cin >> n ;
+for(int i = 0;i<n;i++)
+{
+string temp;
+cin >> temp;
+sum+= m[temp];
+}
+cout << sum ;
+return 0;
+}
