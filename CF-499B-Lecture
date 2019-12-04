@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+int n, m ;
+cin >> n >> m ;
+map<string,string> dict ;
+while(m--)
+{
+string word1, word2 ;
+cin >> word1 >> word2 ;
+dict[word1]=word2;
+}
+while(n--)
+{
+string x;
+cin >> x;
+if(x.length()<= dict[x].length())
+cout <<x<<" " ;
+else
+cout <<dict[x]<<" " ;
+}
+return 0;
+}
