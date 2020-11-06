@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t,s,d,x,y;
+    cin>>t;
+    while(t--){
+        cin>>s>>d;
+        x = (s + d) / 2;
+        y = s - x;
+        if(y < 0){
+            cout<<"impossible\n";
+            continue;
+        }
+        if(x + y == s && abs(x - y) == d)//had to this to make sure that the formula is correct,also avoiding any any chance for making a 
+        cout<<x<<" "<<y<<endl;
+        else cout<<"impossible\n";
+    }
+    return 0;
+}
