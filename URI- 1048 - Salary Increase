@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   double salary,newSalary,moneyEarned,percentage = 0,e = 1e-7;
+   cin>>salary;
+   if(salary >=0 && salary <=400.00 || salary - 400.0 <= e || salary - 0 <= e){
+    percentage = 15;
+   }
+   else if(salary >=400.01 && salary <=800.0 || salary - 800.0 <= e || salary - 400.01 <= e ){
+    percentage = 12;
+   }
+   else if(salary >=800.01 && salary <=1200.00 || salary - 800.01 <= e || salary - 1200.00 <= e){
+    percentage = 10;
+   }
+   else if(salary >=1200.01 && salary <=2000.00 || salary - 1200.01 <= e|| salary - 2000.0 <= e){
+    percentage = 7;
+   }
+   else if(salary >2000.00){
+    percentage = 4;
+   }
+   moneyEarned = percentage / 100 * salary;
+   newSalary =salary + moneyEarned;
+   cout<<fixed<<setprecision(2)<<"Novo salario: "<<newSalary<<endl<<"Reajuste ganho: "<<moneyEarned<<endl<<"Em percentual: "<<int(percentage)<<" %"<<endl;
+    return 0;
+}
