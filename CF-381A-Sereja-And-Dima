@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   int n;
+   cin>>n;
+   int arr[n];
+   for(int i = 0; i < n; i++){
+    cin>>arr[i];
+   }
+   int i = 0,j = n-1,sereja = 0, dima = 0;
+   bool turn = true;
+   while(i < j){
+    if (turn){
+        if(arr[i] > arr[j]) sereja += arr[i++];
+        else sereja += arr[j--];
+    }
+    else {
+        if(arr[i] > arr[j]) dima += arr[i++];
+        else dima += arr[j--];
+    }
+    turn ^= 1;
+   }
+   if(n % 2 == 0) dima += arr[i];
+   else sereja += arr[i];
+   cout<<sereja<<' '<<dima<<endl;
+       return 0;
+}
