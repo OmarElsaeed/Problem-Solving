@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+// take care of indexes ..makes a lot of confusion in this solution
+using namespace std;
+
+int main()
+{
+   int n;
+   cin>>n;
+   int sumArr[++n] = {0},reversSumArr[n+1] = {0};
+   int arr[n] = {0},ans = 0;
+   for(int i = 1; i <= n-1; i++){
+    cin>>arr[i];
+   }
+   sort(arr,arr+n);
+   //reversSumArr[n] = arr[n];
+   for(int i = 1; i <= n; i++){
+        sumArr[i] = sumArr[i-1] + arr[i];
+        reversSumArr[n-i] = reversSumArr[n - i + 1] + arr[n - i];
+   }
+
+        for(int j = n; j > 0; j--){
+                //for(int i = 1; i <= n; i++){
+                if(reversSumArr[j-1] > sumArr[j - 2]) ans = n - j + 1;
+                if(ans) {cout<<ans<<endl;return 0;//}
+        }
+
+   }
+   cout<<ans<<endl;
+       return 0;
+}
