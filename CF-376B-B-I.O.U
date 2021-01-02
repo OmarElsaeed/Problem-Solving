@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+#include <algorithm>
+//لو الفلوس اللي ليا اكبر من اللي عليا ..معني كدا اني غيري هيسد ديوني ف بالتالي بطلع نفسي م الليله واخلي غيري يشيل ديني وبكدا توتال اليدون يقل 
+using namespace std;
+
+int main()
+{
+   int n,m,a,b,c,ans = 0,sum = 0;
+   cin>>m>>n;
+   int giveArr[m+1] = {0},getArr[m+1] = {0};
+   for(int i = 1;i<=n;i++){
+        cin>>a>>b>>c;
+        giveArr[a] += c;
+        getArr[b] += c;
+   }
+   for(int i = 1; i <= m; i++){
+        if(getArr[i] > giveArr[i])
+        ans += (getArr[i]-giveArr[i]);
+        }
+   cout<<ans<<endl;
+    return 0;
+}
