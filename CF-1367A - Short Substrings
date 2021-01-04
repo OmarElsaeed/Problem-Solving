@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+string secretStringOf(string s);
+int main()
+{
+    string s;
+    int t;
+    cin>>t;
+    while(t--){
+        cin>>s;
+       cout<<secretStringOf(s)<<endl;
+    }
+
+    return 0;
+}
+
+  string   secretStringOf(string s){
+        string secretString = "";
+        secretString += s[0]; //had to seperated from last line cause can't convert char to string....secretString = s[0] -> can't be done..
+        int stringSize = s.size();
+        if(stringSize < 3) return s;
+        for(int i = 1; i < stringSize;i++){
+            if(i % 2 != 0){
+                secretString += s[i];
+            }
+        }
+        return secretString;
+    }
