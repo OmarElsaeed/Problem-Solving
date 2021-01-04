@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+
+                            //solution from you tube
+using namespace std;
+
+int main()
+{
+    int n;
+    string original_str;
+    cin >> n >> original_str;
+
+    string decoded;
+
+    int sz = n;
+
+    // original_str: logva ->
+    // encoded: volga
+    // n: 0
+
+    int i = 0;
+    while(n) {
+    	if(n % 2 != 0) {
+    		decoded += original_str[i]; //when size is odd we add to the left of the median.
+    	} else {
+    		decoded = original_str[i] + decoded;//when size is even we add to the right of the median.
+    	}
+
+    	n -= 1; // Mocking the erase of the characters in the string
+    	i += 1;
+    }
+
+    cout << decoded;
+
+    return 0;
+
+}
