@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+
+    string s;
+    cin>>s;
+    int h1 = s[0] - '0',h2 = s[1] - '0',m1 = s[3] - '0' , m2 = s[4] - '0';
+    int houres = h1 * 10 + h2,newminutes = h2*10+h1,minutes = m1*10+m2;
+    if(newminutes>minutes&&newminutes < 60){
+        cout<<h1<<h2<<':'<<h2<<h1<<endl;
+        return 0;
+    }
+    while(true){
+            houres++;//despite incrementing the minutes then comparing it's much better to applay it over the houres
+            houres %= 24;
+            h1 = houres / 10; h2 = houres % 10;
+            minutes = h2*10+h1;
+        if(minutes < 60){
+            cout<<h1<<h2<<':'<<h2<<h1<<endl;
+            break;
+            }
+        }
+    return 0;
+
+}
